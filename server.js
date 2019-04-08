@@ -20,6 +20,16 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get("/s/:id", (req, res) => {
+      const {
+        params: { id },
+      } = req;
+      const actualPage = "/show";
+      const queryParams = { id };
+
+      app.render(req, res, actualPage, queryParams);
+    });
+
     server.get("*", (req, res) => {
       return handle(req, res);
     });
