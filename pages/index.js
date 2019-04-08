@@ -1,5 +1,27 @@
-import withLayout from "../layouts/MyLayout";
+import Link from "next/link";
+import Layout from "../layouts/MyLayout";
 
-const Index = () => <div>Hello Next.js</div>;
+const listStyle = {
+  marginBottom: 10,
+};
 
-export default withLayout(Index);
+const PostLink = ({ title }) => (
+  <li style={listStyle}>
+    <Link href={`/post?title=${title}`}>
+      <a>{title}</a>
+    </Link>
+  </li>
+);
+
+const Index = () => (
+  <Layout>
+    <h1>My Blog</h1>
+    <ul>
+      <PostLink title="Hello Next.js" />
+      <PostLink title="Learn Next.js is awesome" />
+      <PostLink title="Deploy apps with Zeit" />
+    </ul>
+  </Layout>
+);
+
+export default Index;

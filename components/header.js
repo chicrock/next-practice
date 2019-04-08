@@ -3,7 +3,7 @@ import Link from "next/link";
 const headerStyle = {
   display: "flex",
   flexDirection: "row",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "center",
 };
 
